@@ -11,14 +11,15 @@ interface ApiService {
     suspend fun register(@Body request: RegisterRequest): RegisterRequest
 
     @GET("laundries/")
-    suspend fun getLaundries(): List<Laundry>
+    suspend fun getLaundries(): List<LaundryDto>
 
     @GET("washing-machines/")
-    suspend fun getWashingMachines(): List<WashingMachine>
+    suspend fun getWashingMachines(): List<WashingMachineDto>
 
     @POST("washing-cycles/")
-    suspend fun createWashingCycle(@Body request: CreateWashingCycleRequest): WashingCycle
+    suspend fun createWashingCycle(@Body request: CreateWashingCycleRequestDto): WashingCycleDto
 
     @GET("washing-cycles/")
-    suspend fun getWashingCycles(): List<WashingCycle>
+    suspend fun getWashingCycles(): List<WashingCycleDto>
 }
+

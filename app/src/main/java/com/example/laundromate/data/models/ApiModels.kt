@@ -20,7 +20,7 @@ data class RegisterRequest(
     @SerializedName("last_name") val lastName: String?
 )
 
-data class Laundry(
+data class LaundryDto(
     val id: Int,
     val name: String,
     val address: String,
@@ -28,14 +28,14 @@ data class Laundry(
     @SerializedName("dynamic_pricing") val dynamicPricing: Boolean
 )
 
-data class WashingMachine(
+data class WashingMachineDto(
     val id: Int,
     val status: String,
     @SerializedName("max_load") val maxLoad: String,
     @SerializedName("laundry") val laundry: Int
 )
 
-data class WashingCycle(
+data class WashingCycleDto(
     val id: Int? = null,
     val mode: String,
     val temperature: Int,
@@ -45,9 +45,17 @@ data class WashingCycle(
     val user: Int? = null
 )
 
-data class CreateWashingCycleRequest(
+data class CreateWashingCycleRequestDto(
     val mode: String,
     val temperature: Int,
     @SerializedName("booked_for") val bookedFor: String,
     @SerializedName("washing_machine") val washingMachine: Int
 )
+
+fun LaundryDto.toDomain() = com.example.laundromate.domain.models.Laundry(id, name, address, pricePerKg, dynamicPricing)
+fun WashingMachineDto.toDomain() = com.example.laundromate.domain.models.WashingMachine(id, status, maxLoad, laundry)
+fun WashingCycleDto.toDomain() = com.example.laundromate.domain.models.WashingCycle(id, mode, temperature, status, bookedFor, washingMachine, user)
+fun CreateWashingCycleRequestDto.toDomain() = com.example.laundromate.domain.models.CreateWashingCycleRequest(mode, temperature, bookedFor, washingMachine)
+
+fun com.example.laundromate.domain.models.CreateWashingCycleRequest.toDto() = CreateWashingCycleRequestDto(mode, temperature, bookedFor, washingMachine)
+

@@ -1,6 +1,6 @@
 package com.example.laundromate.domain.usecase
 
-import com.example.laundromate.data.models.CreateWashingCycleRequest
+import com.example.laundromate.domain.models.CreateWashingCycleRequest
 import com.example.laundromate.domain.repository.LaundryRepository
 import javax.inject.Inject
 

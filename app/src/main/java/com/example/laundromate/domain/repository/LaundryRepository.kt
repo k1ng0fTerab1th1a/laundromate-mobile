@@ -1,9 +1,9 @@
 package com.example.laundromate.domain.repository
 
-import com.example.laundromate.data.models.CreateWashingCycleRequest
-import com.example.laundromate.data.models.Laundry
-import com.example.laundromate.data.models.WashingCycle
-import com.example.laundromate.data.models.WashingMachine
+import com.example.laundromate.domain.models.CreateWashingCycleRequest
+import com.example.laundromate.domain.models.Laundry
+import com.example.laundromate.domain.models.WashingCycle
+import com.example.laundromate.domain.models.WashingMachine
 
 interface LaundryRepository {
     suspend fun getLaundries(): List<Laundry>

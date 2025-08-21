@@ -10,8 +10,8 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
-import com.example.laundromate.data.models.Laundry
-import com.example.laundromate.data.models.WashingMachine
+import com.example.laundromate.domain.models.Laundry
+import com.example.laundromate.domain.models.WashingMachine
 import java.time.Instant
 import java.time.LocalDateTime
 import java.time.ZoneId

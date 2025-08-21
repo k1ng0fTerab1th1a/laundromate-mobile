@@ -3,8 +3,8 @@ package com.example.laundromate.presentation.laundries
 import android.util.Log
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.example.laundromate.data.models.Laundry
-import com.example.laundromate.data.models.WashingMachine
+import com.example.laundromate.domain.models.Laundry
+import com.example.laundromate.domain.models.WashingMachine
 import com.example.laundromate.domain.repository.LaundryRepository
 import com.example.laundromate.domain.usecase.BookWashingMachineUseCase
 import dagger.hilt.android.lifecycle.HiltViewModel
